@@ -1,0 +1,37 @@
+# gettext/ru.po
+# Russian translation for the tosscoin programm
+# No any copyrights
+# WaldemarSky, 2024
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tosscoin 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-22 01:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: WaldemarSky\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.c:23
+msgid "Too many command line arguments\n"
+msgstr "Слишком много аргументов командной строки\n"
+
+#: main.c:34
+msgid "Command line argument must be a positive number\n"
+msgstr "Аргумент командной строки должен быть положительным числом\n"
+
+#: coin_module.c:16
+msgid "EAGLE"
+msgstr "ОРЁЛ"
+
+#: coin_module.c:17
+msgid "TAIL"
+msgstr "РЕШКА"
+
+#: coin_module.c:73
+#, c-format
+msgid "Total eagles: %d, tails: %d, the maximum seria: %d\n"
+msgstr "Всего орлов: %d, решек: %d, максимальная серия: %d\n"

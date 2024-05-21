@@ -4,12 +4,17 @@
 
 #include "coin_module.h"
 
+#include <libintl.h>
+#define _(STR) gettext(STR)
+#define N_(STR) (STR)
+#define NOOP_(STR) (STR)
+
 #define EAGLE 0
 #define TAIL 1
 
 static const char* arr_coinsides[] = {
-    "EAGLE",
-    "TAIL"
+    NOOP_("EAGLE"),
+    NOOP_("TAIL")
 };
 
 
@@ -55,7 +60,7 @@ void throw_coin(int coin_toss_number, void (*callback)(int, void*), void *userda
     for(int i = coin_toss_number; i > 0; --i) {
         int coinside = (int) (2.0*rand() / (RAND_MAX + 1.0));
         if(coin_toss_number <= 50) {
-            puts(arr_coinsides[coinside]);
+            puts(_(arr_coinsides[coinside]));
         }
         callback(coinside, userdata);
     }
@@ -65,7 +70,7 @@ void throw_coin(int coin_toss_number, void (*callback)(int, void*), void *userda
 
 void print_res(struct result_coins *rc)
 {
-    printf("Total Eagles: %d, Tails: %d, Maximum seria: %d\n",
+    printf(_("Total eagles: %d, tails: %d, the maximum seria: %d\n"),
            rc->egtails_number[0],
            rc->egtails_number[1],
            rc->max_seria);

@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <locale.h>
-#include <libintl.h>               /* for bindtextdomain */
-#include <stdlib.h>                /* for atoi           */
+#include <stdlib.h>                /* for atoi */
 
 #include "coin_module.h"
 
-#define LOCALEBASEDIR "."
-#define TEXTDOMAIN "coin"
-
+#include <libintl.h>
 #define _(STR) gettext(STR)
 #define N_(STR) (STR)
+
+#define LOCALEBASEDIR "./locale"
+#define TEXTDOMAIN "tosscoin"
 
 
 int main(int argc, char** argv)
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     if(argc == 2) {
         coin_toss_number = atoi(argv[1]);
         if(coin_toss_number <= 0) {
-            fputs("Argument must be positive number\n", stderr);
+            fputs(_("Command line argument must be a positive number\n"), stderr);
             return 2;
         }
     }
